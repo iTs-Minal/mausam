@@ -13,7 +13,6 @@ export interface WeatherCondition{
 export interface WeatherData{
     coord: Coordinates;
     weather: WeatherCondition[];
-    base: string;
     main: {
         temp: number;
         feels_like: number;
@@ -32,14 +31,11 @@ export interface WeatherData{
     };
     dt: number;
     sys: {
-        type: number;
-        id: number;
         country: string;
         sunrise: number;
         sunset: number;
     };
-    timezone: number;
-    id: number;
+
     name: string;
 }
 

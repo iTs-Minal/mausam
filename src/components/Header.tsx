@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "./theme-provide";
+import { useTheme } from "./theme-provider";
 import { Moon, Sun } from "lucide-react";
 import CitySearch from "./city-search";
 
@@ -19,7 +19,7 @@ const Header = () => {
           />
         </Link>
 
-        <div>
+        <div className="flex gap-4">
           <CitySearch />
 
           <div

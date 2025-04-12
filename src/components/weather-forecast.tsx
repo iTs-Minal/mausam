@@ -46,7 +46,6 @@ date: forecast.dt,
 
 },{} as Record<string, DailyForecast>);
 
-console.log(dailyForecasts);
 
 const nextDays =Object.values(dailyForecasts).slice(0 ,6)
 
