@@ -71,7 +71,7 @@ locationQuery.refetch();
         <AlertTriangle className="h-4 w-4" />
         <AlertTitle>Error</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          <p>Failed tp fetc weather data. Please try again.</p>
+          <p>Failed to fetch weather data. Please try again.</p>
           <Button onClick={handleRefresh} variant={"outline"} className="w-fit"> 
             <RefreshCw className={`h-4 w-4 ${weatherQuery.isFetching? "animate-spin":""}`} />
             retry
@@ -115,7 +115,7 @@ locationQuery.refetch();
           <HourlyTemperature data={forecastQuery.data} />
         </div>
 
-        <div>
+        <div className="grid gap-6 md:grid-cols-2 items-start">
           <WeatherDetails data={weatherQuery.data}/>
 
           <WeatherForecast data={forecastQuery.data}/>

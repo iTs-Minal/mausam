@@ -20,14 +20,14 @@ class WeatherAPI {
 
     }
 
-    async getCurrentWeather({ lat, lon }: Coordinates):Promise<WeatherData> {
+    async getCurrentWeather({ lat, lon }: Coordinates): Promise<WeatherData> {
         const url = this.createUrl(`${API_CONFIG.BASE_URL}/weather`,
             {
                 lat: lat.toString(),
                 lon: lon.toString(),
                 units: API_CONFIG.DEFAULT_PARAMS.units,
             });
-            return this.fetchData<WeatherData>(url);
+        return this.fetchData<WeatherData>(url);
     }
 
     async getForecast({ lat, lon }: Coordinates): Promise<ForecastData> {
@@ -37,7 +37,7 @@ class WeatherAPI {
                 lon: lon.toString(),
                 units: API_CONFIG.DEFAULT_PARAMS.units,
             });
-            return this.fetchData<ForecastData>(url);
+        return this.fetchData<ForecastData>(url);
     }
 
 
@@ -48,9 +48,18 @@ class WeatherAPI {
                 lon: lon.toString(),
                 units: API_CONFIG.DEFAULT_PARAMS.units,
             });
-            return this.fetchData<GeocodingResponse[]>(url);
+        return this.fetchData<GeocodingResponse[]>(url);
+    }
+
+    async searchLocations(query: string): Promise<GeocodingResponse[]> {
+        const url = this.createUrl(`${API_CONFIG.GEO}/direct`,
+            {
+                q: query,
+                limit: "5"
+            });
+        return this.fetchData<GeocodingResponse[]>(url);
     }
 
 }
 
-export const weatherAPI= new WeatherAPI();
+export const weatherAPI = new WeatherAPI();
