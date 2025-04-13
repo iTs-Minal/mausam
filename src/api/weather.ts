@@ -47,9 +47,9 @@ class WeatherAPI {
             {
                 lat: lat.toString(),
                 lon: lon.toString(),
-                limit:"1"
+                limit: "1"
             });
-            console.log("Reverse Geocode URL:", url);
+        console.log("Reverse Geocode URL:", url);
         return this.fetchData<GeocodingResponse[]>(url);
     }
 
